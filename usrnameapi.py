@@ -1,9 +1,17 @@
 from flask import jsonify
 from flask_restful import Api, Resource, reqparse
 
-def getSites(username) {
+apikey = ''
+with open('apikey.txt', 'r') as f:
+  apikey = f.read();
+    
 
-}
+def getSites(username):
+  # TODO implement search api
+  print(username)
+  sites = ['Facebook.com', 'Twitter.com', 'Spotify.com', 'Reddit.com', 'Instagram.com', 'Youtube.com', 'Twitch.tv', 'Tiktok.com', 'Pinterest.com', 'Linkedin.com']
+  return sites
+
 
 
 
@@ -36,7 +44,7 @@ class UsernameApiHandler(Resource):
       message = "Your Message Requested: {}".format(ret_msg)
     else:
       message = "No Msg" """
-    arraystuff = ['Facebook.com', 'Twitter.com', 'Spotify.com', 'Reddit.com', 'Instagram.com', 'Youtube.com', 'Twitch.tv', 'Tiktok.com', 'Pinterest.com', 'Linkedin.com']
+    arraystuff = getSites(request_json)
     final_ret = {'result': arraystuff}
     print(final_ret)
     return final_ret
