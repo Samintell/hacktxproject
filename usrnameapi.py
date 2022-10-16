@@ -1,4 +1,11 @@
+from flask import jsonify
 from flask_restful import Api, Resource, reqparse
+
+def getSites(username) {
+
+}
+
+
 
 class UsernameApiHandler(Resource):
   def get(self):
@@ -25,11 +32,11 @@ class UsernameApiHandler(Resource):
     #ret_status = request_type
     #ret_msg = request_json
 
-    if ret_msg:
+    """ if ret_msg:
       message = "Your Message Requested: {}".format(ret_msg)
     else:
-      message = "No Msg"
-    
-    final_ret = {"status": "Success", "message": "cash"}
-
+      message = "No Msg" """
+    arraystuff = ['Facebook.com', 'Twitter.com', 'Spotify.com', 'Reddit.com', 'Instagram.com', 'Youtube.com', 'Twitch.tv', 'Tiktok.com', 'Pinterest.com', 'Linkedin.com']
+    final_ret = {'result': arraystuff}
+    print(final_ret)
     return final_ret

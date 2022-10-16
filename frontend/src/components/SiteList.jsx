@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
     },
   });
   
-export const SiteList = (data) => {
+export const SiteList = (props) => {
     return (
       <View style={styles.container}>
         <FlatList
-          data={data}
-          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+          data={props.data}
+          renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
         />
       </View>
     );

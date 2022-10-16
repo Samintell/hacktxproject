@@ -1,19 +1,21 @@
 import React from 'react';
-import { getResults } from '../services/unAPICalls';
+
 
 export class NameForm extends React.Component {
+    #callback = ""
     constructor(props) {
       super(props);
       this.state = {value: ''};
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.callback = props.callbackFunction
     }
   
     handleChange(event) {    this.setState({value: event.target.value});  }
     handleSubmit(event) {
       //alert('A name was submitted: ' + this.state.value);
-      var response = getResults("bob");
-      alert(response);
+      //alert(response);
+      this.props.callbackFunction(this.state.value);
       event.preventDefault();
     }
   
