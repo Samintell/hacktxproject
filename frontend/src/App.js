@@ -3,6 +3,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { SiteList } from './components/SiteList';
+import { NameForm } from './components/NameForm';
 
 function App() {
   const [getMessage, setGetMessage] = useState({})
@@ -24,8 +25,20 @@ function App() {
           <h3>{getMessage.data.message}</h3>
           :
           <h3>LOADING</h3>}
-          <SiteList/>
-          </div>
+        </div>
+        <NameForm/>
+        <SiteList data={[
+            {key: 'Devin'},
+            {key: 'Dan'},
+            {key: 'Dominic'},
+            {key: 'Jackson'},
+            {key: 'James'},
+            {key: 'Joel'},
+            {key: 'John'},
+            {key: 'Jillian'},
+            {key: 'Jimmy'},
+            {key: 'Julie'},
+          ]}/>
       </header>
     </div>
   );
